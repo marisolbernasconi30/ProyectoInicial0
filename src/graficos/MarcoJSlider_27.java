@@ -1,5 +1,7 @@
 package graficos;
 
+import java.awt.BorderLayout;
+
 import javax.swing.*;
 
 public class MarcoJSlider_27 {
@@ -25,7 +27,9 @@ class F_W_Slider2 extends JFrame{
 class Slider_Sheel extends JPanel{
 	
 	public Slider_Sheel () {
-		
+		setLayout(new BorderLayout());
+		rotulo=new JLabel ("  Mañana empiezo el terciario, que miedo x2");
+		add(rotulo, BorderLayout.CENTER);
 		
 	}
 	
