@@ -45,17 +45,9 @@ class Slider_Sheel extends JPanel{
 		add(segundaLamina, BorderLayout.NORTH);
 	}
 	private class EventoSlider implements ChangeListener{
-
-		
 		public void stateChanged(ChangeEvent e) {
-
 			rotulo.setFont(new Font("Serif", Font.PLAIN, control.getValue()));
-
 		}
-
-
-
-		
 	}
 	private JLabel rotulo;
 	private JSlider control;
