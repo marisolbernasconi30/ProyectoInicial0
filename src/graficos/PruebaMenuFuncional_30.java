@@ -35,15 +35,39 @@ class MenuFSheel extends JPanel{
         configura_menu("Courier", "Fuente", "Courier", 9 , 10, "");
         configura_menu("Verdana", "Fuente", "Verdana", 9 , 10, "");
      //--------------------------------------------------------------------------------------------
-        configura_menu("Negrita", "Estilo", "", Font.BOLD , 1, "bin/graficos/imagenes_java/mag15.png");
-        configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1, "bin/graficos/imagenes_java/verde15.png");
+           // configura_menu("Negrita", "Estilo", "", Font.BOLD , 1, "bin/graficos/imagenes_java/mag15.png");
+           // configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1, "bin/graficos/imagenes_java/verde15.png");
+           JCheckBoxMenuItem negrita=new JCheckBoxMenuItem("Negrita", new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
+           JCheckBoxMenuItem cursiva=new JCheckBoxMenuItem("Cursiva", new ImageIcon("bin/graficos/imagenes_java/naranja15.png"));
+           
+           negrita.addActionListener(new StyledEditorKit.BoldAction());    //lo ponemos a la escucha y le damos la funcion
+           cursiva.addActionListener(new StyledEditorKit.ItalicAction()); 
+          
+           estilo.add(negrita);
+           estilo.add(cursiva);
      //---------------------------------------------------------------------------------------------
-        configura_menu("12", "Tamaño", "", 9 , 12, "");
+       
+      /*   configura_menu("12", "Tamaño", "", 9 , 12, "");
         configura_menu("18", "Tamaño", "", 9 , 18, "");
         configura_menu("22", "Tamaño", "", 9 , 22, "");
-        configura_menu("26", "Tamaño", "", 9 , 26, "");
+        configura_menu("26", "Tamaño", "", 9 , 26, "");  */
         //el valor 9 no corresponde a nada
         //el rotulo, hace referencia a lo textual que aparece cuando se ejecuta. pero solo lo textual, no otra cosa
+
+        ButtonGroup grupo_boton=new ButtonGroup();
+        JRadioButtonMenuItem letra1=new JRadioButtonMenuItem("18");
+        JRadioButtonMenuItem letra2=new JRadioButtonMenuItem("24");
+        JRadioButtonMenuItem letra3=new JRadioButtonMenuItem("28");
+        grupo_boton.add(letra1);
+        grupo_boton.add(letra2);
+        grupo_boton.add(letra3);
+        letra1.addActionListener(new StyledEditorKit.FontSizeAction("cambia la letra", 18));
+        letra2.addActionListener(new StyledEditorKit.FontSizeAction("cambia la letra", 24));
+        letra3.addActionListener(new StyledEditorKit.FontSizeAction("cambia la letra", 28));
+        medida.add(letra1);
+        medida.add(letra2);
+        medida.add(letra3);
+
      //---------------------------------------------------------------------------------------------------------------
         barra.add(fuente);
         barra.add(estilo);
@@ -65,7 +89,7 @@ class MenuFSheel extends JPanel{
         } else if (tipo_letra=="Verdana"){
             elemento_menu.addActionListener(new StyledEditorKit.FontFamilyAction("cambia la letra", "Verdana"));
         }
-    } else if (menu=="Estilo"){
+    } /*  else if (menu=="Estilo"){
         estilo.add(elemento_menu);
         if(estilos == Font.BOLD){
            elemento_menu.addActionListener(new StyledEditorKit.BoldAction());
@@ -73,11 +97,11 @@ class MenuFSheel extends JPanel{
            elemento_menu.addActionListener(new StyledEditorKit.ItalicAction());
         }
         
-    } else if (menu=="Tamaño"){
+    } *//*else if (menu=="Tamaño"){
         medida.add(elemento_menu);
         elemento_menu.addActionListener(new StyledEditorKit.FontSizeAction("cambia la medida", tam)); //modifica el tamaño del texto seleccionado en el frame
     }
-    
+    */
   }
     //--------------------------------------------------
     JTextPane area=new JTextPane();
