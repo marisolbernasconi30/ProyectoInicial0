@@ -31,17 +31,17 @@ class MenuFSheel extends JPanel{
         fuente= new JMenu("Fuente");
         estilo= new JMenu("Estilo");
         medida= new JMenu("Tamaño");
-        configura_menu("Arial", "Fuente", "Arial", 9 , 10);
-        configura_menu("Courier", "Fuente", "Courier", 9 , 10);
-        configura_menu("Verdana", "Fuente", "Verdana", 9 , 10);
+        configura_menu("Arial", "Fuente", "Arial", 9 , 10, "");
+        configura_menu("Courier", "Fuente", "Courier", 9 , 10, "");
+        configura_menu("Verdana", "Fuente", "Verdana", 9 , 10, "");
      //--------------------------------------------------------------------------------------------
-        configura_menu("Negrita", "Estilo", "", Font.BOLD , 1);
-        configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1);
+        configura_menu("Negrita", "Estilo", "", Font.BOLD , 1, "bin/graficos/imagenes_java/mag15.png");
+        configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1, "bin/graficos/imagenes_java/verde15.png");
      //---------------------------------------------------------------------------------------------
-        configura_menu("12", "Tamaño", "", 9 , 12);
-        configura_menu("18", "Tamaño", "", 9 , 18);
-        configura_menu("22", "Tamaño", "", 9 , 22);
-        configura_menu("26", "Tamaño", "", 9 , 26);
+        configura_menu("12", "Tamaño", "", 9 , 12, "");
+        configura_menu("18", "Tamaño", "", 9 , 18, "");
+        configura_menu("22", "Tamaño", "", 9 , 22, "");
+        configura_menu("26", "Tamaño", "", 9 , 26, "");
         //el valor 9 no corresponde a nada
         //el rotulo, hace referencia a lo textual que aparece cuando se ejecuta. pero solo lo textual, no otra cosa
      //---------------------------------------------------------------------------------------------------------------
@@ -53,9 +53,9 @@ class MenuFSheel extends JPanel{
         area=new JTextPane(); //para el cuadro de texto
         add(area, BorderLayout.CENTER); //añadi el cuadro de texto
     }
-    public void configura_menu (String rotulo, String menu, String tipo_letra, int estilos, int tam){
+    public void configura_menu (String rotulo, String menu, String tipo_letra, int estilos, int tam, String ruta_icono){
     //este es un metodo capaz de crear los elementos del menu
-    JMenuItem elemento_menu=new JMenuItem(rotulo); 
+    JMenuItem elemento_menu=new JMenuItem(rotulo, new ImageIcon(ruta_icono)); 
     if (menu=="Fuente"){
         fuente.add(elemento_menu);
         if(tipo_letra=="Arial"){
