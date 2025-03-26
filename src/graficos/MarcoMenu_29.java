@@ -31,9 +31,9 @@ class MenuSheel extends JPanel{
           JMenu masopciones=new JMenu("Mas opciones");
           JMenuItem opcion1_1=new JMenuItem("Guardar");
           JMenuItem opcion1_2=new JMenuItem("Guardar como");   //las opciones dentro de las opciones del menu
-          JMenuItem opcion3_1=new JMenuItem("Copiar");
-          JMenuItem opcion3_2=new JMenuItem("Cortar");
-          JMenuItem opcion3_3=new JMenuItem("Pegar");
+          JMenuItem opcion3_1=new JMenuItem("Copiar", new ImageIcon("bin/graficos/imagenes_java/mag15.png")); //FUNCIONA
+          JMenuItem opcion3_2=new JMenuItem("Cortar", new ImageIcon("bin/graficos/imagenes_java/naranja15.png"));
+          JMenuItem opcion3_3=new JMenuItem("Pegar", new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
           JMenuItem opcion2_1=new JMenuItem("Generales");
           JMenuItem masopciones1=new JMenuItem("Opcion 1");
           JMenuItem masopciones2=new JMenuItem("Opcion 2");
