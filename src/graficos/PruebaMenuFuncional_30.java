@@ -2,6 +2,8 @@ package graficos;
 import javax.swing.*;
 import javax.swing.text.StyledEditorKit;
 import java.awt.*;
+import java.awt.event.InputEvent;
+import java.awt.event.*;
 
 public class PruebaMenuFuncional_30 {
     
@@ -56,6 +58,9 @@ class MenuFSheel extends JPanel{
         JRadioButtonMenuItem letra1=new JRadioButtonMenuItem("18");
         JRadioButtonMenuItem letra2=new JRadioButtonMenuItem("24");
         JRadioButtonMenuItem letra3=new JRadioButtonMenuItem("28");
+        //letra3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_DOWN_MASK)); //atajo de teclado
+
+
         grupo_boton.add(letra1);
         grupo_boton.add(letra2);
         grupo_boton.add(letra3);
@@ -103,8 +108,10 @@ class MenuFSheel extends JPanel{
     }  else if (menu=="Estilo"){
         estilo.add(elemento_menu);
         if(estilos == Font.BOLD){
+            elemento_menu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, InputEvent.CTRL_DOWN_MASK)); //atajo teclado letra N y ctrl
            elemento_menu.addActionListener(new StyledEditorKit.BoldAction());
         } else if (estilos==Font.ITALIC) {
+            elemento_menu.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_K, InputEvent.CTRL_DOWN_MASK)); //atajo teclado letra K y ctrl
            elemento_menu.addActionListener(new StyledEditorKit.ItalicAction());
         }
         
