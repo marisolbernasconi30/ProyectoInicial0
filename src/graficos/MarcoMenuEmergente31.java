@@ -51,8 +51,8 @@ class PopMenuSheel extends JPanel{
         JMenuItem opcion1=new JMenuItem("Opcion 1");
         emergente.add(opcion1);
 
-        setComponentPopupMenu(emergente); //para que sea visible. Esto si lo hago con el boton derecho del mouse
-        // este metodo solo me sirve cuando hay una sola lamina, asi, solito
+        area.setComponentPopupMenu(emergente); //para que sea visible. Esto si lo hago con el boton derecho del mouse
+        // le dije que me agregue el metodo a la segunda lamina, ahora si funciona.
 
     }
 
