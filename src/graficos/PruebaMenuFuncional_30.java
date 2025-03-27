@@ -35,16 +35,14 @@ class MenuFSheel extends JPanel{
         configura_menu("Courier", "Fuente", "Courier", 9 , 10, "");
         configura_menu("Verdana", "Fuente", "Verdana", 9 , 10, "");
      //--------------------------------------------------------------------------------------------
-           // configura_menu("Negrita", "Estilo", "", Font.BOLD , 1, "bin/graficos/imagenes_java/mag15.png");
-           // configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1, "bin/graficos/imagenes_java/verde15.png");
-           JCheckBoxMenuItem negrita=new JCheckBoxMenuItem("Negrita", new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
+            configura_menu("Negrita", "Estilo", "", Font.BOLD , 1, "bin/graficos/imagenes_java/mag15.png");
+            configura_menu("Cursiva", "Estilo", "", Font.ITALIC , 1, "bin/graficos/imagenes_java/verde15.png");
+           /*JCheckBoxMenuItem negrita=new JCheckBoxMenuItem("Negrita", new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
            JCheckBoxMenuItem cursiva=new JCheckBoxMenuItem("Cursiva", new ImageIcon("bin/graficos/imagenes_java/naranja15.png"));
-           
            negrita.addActionListener(new StyledEditorKit.BoldAction());    //lo ponemos a la escucha y le damos la funcion
            cursiva.addActionListener(new StyledEditorKit.ItalicAction()); 
-          
            estilo.add(negrita);
-           estilo.add(cursiva);
+           estilo.add(cursiva);*/
      //---------------------------------------------------------------------------------------------
        
       /*   configura_menu("12", "Tamaño", "", 9 , 12, "");
@@ -76,6 +74,19 @@ class MenuFSheel extends JPanel{
         add(laminamenu, BorderLayout.NORTH);
         area=new JTextPane(); //para el cuadro de texto
         add(area, BorderLayout.CENTER); //añadi el cuadro de texto
+
+        JPopupMenu emergente= new JPopupMenu();
+        JMenuItem negritae=new JMenuItem("Negrita");
+        JMenuItem cursivae=new JMenuItem("Cursiva");
+
+        negritae.addActionListener(new StyledEditorKit.BoldAction());
+        cursivae.addActionListener(new StyledEditorKit.ItalicAction());
+
+
+        emergente.add(negritae);
+        emergente.add(cursivae);
+
+        area.setComponentPopupMenu(emergente);
     }
     public void configura_menu (String rotulo, String menu, String tipo_letra, int estilos, int tam, String ruta_icono){
     //este es un metodo capaz de crear los elementos del menu
@@ -89,7 +100,7 @@ class MenuFSheel extends JPanel{
         } else if (tipo_letra=="Verdana"){
             elemento_menu.addActionListener(new StyledEditorKit.FontFamilyAction("cambia la letra", "Verdana"));
         }
-    } /*  else if (menu=="Estilo"){
+    }  else if (menu=="Estilo"){
         estilo.add(elemento_menu);
         if(estilos == Font.BOLD){
            elemento_menu.addActionListener(new StyledEditorKit.BoldAction());
@@ -97,7 +108,7 @@ class MenuFSheel extends JPanel{
            elemento_menu.addActionListener(new StyledEditorKit.ItalicAction());
         }
         
-    } *//*else if (menu=="Tamaño"){
+    } /*else if (menu=="Tamaño"){
         medida.add(elemento_menu);
         elemento_menu.addActionListener(new StyledEditorKit.FontSizeAction("cambia la medida", tam)); //modifica el tamaño del texto seleccionado en el frame
     }
