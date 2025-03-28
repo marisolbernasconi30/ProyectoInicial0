@@ -22,9 +22,9 @@ class PanelAction extends JPanel{
 	
 	public PanelAction () {
 	
-ActionColor accionMagenta=new ActionColor("Magenta", new ImageIcon("ProyectoInicial/src/graficos.imagenes_java/mag15.png"), Color.MAGENTA);
-ActionColor accionNaranja=new ActionColor("Naranja", new ImageIcon("ProyectoInicial/src/graficos.imagenes_java/naranja15.png"), Color.ORANGE);
-ActionColor accionVerde=new ActionColor("Verde", new ImageIcon("ProyectoInicial/src/graficos.imagenes_java/verde15.png"), Color.GREEN);
+ActionColor accionMagenta=new ActionColor("Magenta", new ImageIcon("bin/graficos/imagenes_java/mag15.png"), Color.MAGENTA);
+ActionColor accionNaranja=new ActionColor("Naranja", new ImageIcon("bin/graficos/imagenes_java/naranja15.png"), Color.ORANGE);
+ActionColor accionVerde=new ActionColor("Verde", new ImageIcon("bin/graficos/imagenes_java/verde15.png"), Color.GREEN);
 	
 		add(new JButton(accionMagenta));
 		add(new JButton(accionNaranja));
