@@ -23,6 +23,11 @@ class  WFToolBar extends JFrame{
         Action accionMagenta=new ToolBarAction("Magenta", new ImageIcon("bin/graficos/imagenes_java/mag15.png"), Color.MAGENTA);
         Action accionNaranja=new ToolBarAction("Naranja", new ImageIcon("bin/graficos/imagenes_java/naranja15.png"), Color.ORANGE);
         Action accionVerde=new ToolBarAction("Verde", new ImageIcon("bin/graficos/imagenes_java/verde15.png"), Color.GREEN);
+		Action boton_salir=new AbstractAction("Salir", new ImageIcon("bin/graficos/imagenes_java/imagensalir15x15.gif")){
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0); //solo con esto, le decimos que con presionar cierre todo
+			}
+		};
 
         JMenu menu=new JMenu("Colores");
         menu.add(accionMagenta);
@@ -37,6 +42,10 @@ class  WFToolBar extends JFrame{
 		barra.add(accionMagenta);
 		barra.add(accionNaranja);
 		barra.add(accionVerde);
+
+		barra.addSeparator(); //agregamos un separador, para diferenciar los botones
+
+		barra.add(boton_salir);
 		add(barra, BorderLayout.NORTH);
 	}
 
