@@ -92,6 +92,15 @@ class MenuFSheel extends JPanel{
         emergente.add(cursivae);
 
         area.setComponentPopupMenu(emergente);
+
+        JToolBar barraEstilo= new JToolBar();
+        JButton negritabarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/NEGRITA15X15.gif"));
+        JButton italicbarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/ITALIC15X15.png"));
+        barraEstilo.add(negritabarra);
+        barraEstilo.add(italicbarra);
+        barraEstilo.setOrientation(1); //con el 1 la pongo en vertical.
+        add(barraEstilo, BorderLayout.WEST);
+
     }
     public void configura_menu (String rotulo, String menu, String tipo_letra, int estilos, int tam, String ruta_icono){
     //este es un metodo capaz de crear los elementos del menu
