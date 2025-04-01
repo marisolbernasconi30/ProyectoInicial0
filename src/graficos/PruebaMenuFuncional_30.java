@@ -96,9 +96,16 @@ class MenuFSheel extends JPanel{
         JToolBar barraEstilo= new JToolBar();
         JButton negritabarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/NEGRITA15X15.gif"));
         JButton italicbarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/ITALIC15X15.png"));
+        JButton subrayadobarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/subrayado15x15.gif"));
+        
+        negritabarra.addActionListener(new StyledEditorKit.BoldAction());
+        italicbarra.addActionListener(new StyledEditorKit.ItalicAction());
+        subrayadobarra.addActionListener(new StyledEditorKit.UnderlineAction());
         barraEstilo.add(negritabarra);
         barraEstilo.add(italicbarra);
+        barraEstilo.add(subrayadobarra);
         barraEstilo.setOrientation(1); //con el 1 la pongo en vertical.
+
         add(barraEstilo, BorderLayout.WEST);
 
     }
