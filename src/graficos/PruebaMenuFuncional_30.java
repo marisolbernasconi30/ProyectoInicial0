@@ -100,6 +100,10 @@ class MenuFSheel extends JPanel{
         JButton letramagenta=new JButton(new ImageIcon("bin/graficos/imagenes_java/mag15.png"));
         JButton letranaranja=new JButton(new ImageIcon("bin/graficos/imagenes_java/naranja15.png"));
         JButton letraverde=new JButton(new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
+        JButton textoderecha=new JButton(new ImageIcon("bin/graficos/imagenes_java/derecha15x15.gif"));
+        JButton textoizquierda=new JButton(new ImageIcon("bin/graficos/imagenes_java/izquierda15x15.gif"));
+        JButton textocentrado=new JButton(new ImageIcon("bin/graficos/imagenes_java/centrado15x15.gif"));
+        JButton textolargo=new JButton(new ImageIcon("bin/graficos/imagenes_java/largo15x15.gif"));
         
         negritabarra.addActionListener(new StyledEditorKit.BoldAction());
         italicbarra.addActionListener(new StyledEditorKit.ItalicAction());
@@ -107,12 +111,25 @@ class MenuFSheel extends JPanel{
         letramagenta.addActionListener(new StyledEditorKit.ForegroundAction("color magenta", Color.MAGENTA));
         letranaranja.addActionListener(new StyledEditorKit.ForegroundAction("color naranja", Color.ORANGE));
         letraverde.addActionListener(new StyledEditorKit.ForegroundAction("color verde", Color.GREEN));
+        textoderecha.addActionListener(new StyledEditorKit.AlignmentAction("derecha", 2));
+        textoizquierda.addActionListener(new StyledEditorKit.AlignmentAction("izquierda", 0));
+        textocentrado.addActionListener(new StyledEditorKit.AlignmentAction("centrado", 1));
+        textolargo.addActionListener(new StyledEditorKit.AlignmentAction("a lo largo", 3));
+
+
         barraEstilo.add(negritabarra);
         barraEstilo.add(italicbarra);
         barraEstilo.add(subrayadobarra);
         barraEstilo.add(letramagenta);
         barraEstilo.add(letranaranja);
         barraEstilo.add(letraverde);
+        barraEstilo.add(textoizquierda);
+        barraEstilo.add(textocentrado);
+        barraEstilo.add(textoderecha);
+        barraEstilo.add(textolargo);
+
+
+
         barraEstilo.setOrientation(1); //con el 1 la pongo en vertical.
 
         add(barraEstilo, BorderLayout.WEST);
