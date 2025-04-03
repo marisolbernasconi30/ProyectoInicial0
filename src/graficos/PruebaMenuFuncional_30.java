@@ -17,7 +17,7 @@ class F_W_MenuFuncional extends JFrame{
 
     public F_W_MenuFuncional () {
 		setTitle("Menu Funcional Text");
-		setBounds(600,150,600,300);
+		setBounds(600,150,600,400);
 		MenuFSheel menuF_sheel=new MenuFSheel();
 		add(menuF_sheel);
 		setVisible(true);
@@ -92,14 +92,17 @@ class MenuFSheel extends JPanel{
         emergente.add(cursivae);
 
         area.setComponentPopupMenu(emergente);
+        /* 
 
         JToolBar barraEstilo= new JToolBar();
-        JButton negritabarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/NEGRITA15X15.gif"));
-        JButton italicbarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/ITALIC15X15.gif"));
-        JButton subrayadobarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/SUBRAYAR15X15.gif"));
+        JButton negritabarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/negrita15x15.gif"));
+        JButton italicbarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/cursiva15x15.gif"));
+        JButton subrayadobarra=new JButton(new ImageIcon("bin/graficos/imagenes_java/subrayado15x15.gif"));
+
         JButton letramagenta=new JButton(new ImageIcon("bin/graficos/imagenes_java/mag15.png"));
         JButton letranaranja=new JButton(new ImageIcon("bin/graficos/imagenes_java/naranja15.png"));
         JButton letraverde=new JButton(new ImageIcon("bin/graficos/imagenes_java/verde15.png"));
+
         JButton textoderecha=new JButton(new ImageIcon("bin/graficos/imagenes_java/derecha15x15.gif"));
         JButton textoizquierda=new JButton(new ImageIcon("bin/graficos/imagenes_java/izquierda15x15.gif"));
         JButton textocentrado=new JButton(new ImageIcon("bin/graficos/imagenes_java/centrado15x15.gif"));
@@ -108,14 +111,15 @@ class MenuFSheel extends JPanel{
         negritabarra.addActionListener(new StyledEditorKit.BoldAction());
         italicbarra.addActionListener(new StyledEditorKit.ItalicAction());
         subrayadobarra.addActionListener(new StyledEditorKit.UnderlineAction());
+
         letramagenta.addActionListener(new StyledEditorKit.ForegroundAction("color magenta", Color.MAGENTA));
         letranaranja.addActionListener(new StyledEditorKit.ForegroundAction("color naranja", Color.ORANGE));
         letraverde.addActionListener(new StyledEditorKit.ForegroundAction("color verde", Color.GREEN));
+
         textoderecha.addActionListener(new StyledEditorKit.AlignmentAction("derecha", 2));
         textoizquierda.addActionListener(new StyledEditorKit.AlignmentAction("izquierda", 0));
         textocentrado.addActionListener(new StyledEditorKit.AlignmentAction("centrado", 1));
         textolargo.addActionListener(new StyledEditorKit.AlignmentAction("a lo largo", 3));
-
 
         barraEstilo.add(negritabarra);
         barraEstilo.add(italicbarra);
@@ -128,13 +132,36 @@ class MenuFSheel extends JPanel{
         barraEstilo.add(textoderecha);
         barraEstilo.add(textolargo);
 
+        */
 
+       barraEstiloTexto= new JToolBar();
+       configuraBarra("bin/graficos/imagenes_java/negrita15x15.gif").addActionListener(new StyledEditorKit.BoldAction()); 
+       configuraBarra("bin/graficos/imagenes_java/cursiva15x15.gif").addActionListener(new StyledEditorKit.ItalicAction()); 
+       configuraBarra("bin/graficos/imagenes_java/subrayado15x15.gif").addActionListener(new StyledEditorKit.UnderlineAction()); 
+       barraEstiloTexto.addSeparator();
 
-        barraEstilo.setOrientation(1); //con el 1 la pongo en vertical.
+       configuraBarra("bin/graficos/imagenes_java/mag15.png").addActionListener(new StyledEditorKit.ForegroundAction("color magenta", Color.MAGENTA)); 
+       configuraBarra("bin/graficos/imagenes_java/naranja15.png").addActionListener(new StyledEditorKit.ForegroundAction("color naranja", Color.ORANGE)); 
+       configuraBarra("bin/graficos/imagenes_java/verde15.png").addActionListener(new StyledEditorKit.ForegroundAction("color verde", Color.GREEN)); 
+       barraEstiloTexto.addSeparator();
 
-        add(barraEstilo, BorderLayout.WEST);
+       configuraBarra("bin/graficos/imagenes_java/izquierda15x15.gif").addActionListener(new StyledEditorKit.AlignmentAction("izquierda", 0)); 
+       configuraBarra("bin/graficos/imagenes_java/centrado15x15.gif").addActionListener(new StyledEditorKit.AlignmentAction("centrado", 1)); 
+       configuraBarra("bin/graficos/imagenes_java/derecha15x15.gif").addActionListener(new StyledEditorKit.AlignmentAction("derecha", 2)); 
+       configuraBarra("bin/graficos/imagenes_java/largo15x15.gif").addActionListener(new StyledEditorKit.AlignmentAction("a lo largo", 3)); 
+
+        barraEstiloTexto.setOrientation(1); //con el 1 la pongo en vertical.
+
+        add(barraEstiloTexto, BorderLayout.WEST);
 
     }
+    public JButton configuraBarra (String ruta){ //CON ESTE METODO, CREO BOTONES, ME LOS AGREGA A LA BARRA, Y ME LOS DEVUELVE
+        JButton boton=new JButton(new ImageIcon(ruta));
+        barraEstiloTexto.add(boton);
+        return boton;
+    }
+
+
     public void configura_menu (String rotulo, String menu, String tipo_letra, int estilos, int tam, String ruta_icono){
     //este es un metodo capaz de crear los elementos del menu
     JMenuItem elemento_menu=new JMenuItem(rotulo, new ImageIcon(ruta_icono)); 
@@ -167,6 +194,8 @@ class MenuFSheel extends JPanel{
     JTextPane area=new JTextPane();
     JMenu fuente, estilo, medida;
     Font letras;
+    JButton negrita, cursiva, subrayar, letra_magenta, letra_naranja, letra_verde, texto_derecha, texto_izquierda, texto_centrado, texto_largo;
+    JToolBar barraEstiloTexto;
 
 }
 
