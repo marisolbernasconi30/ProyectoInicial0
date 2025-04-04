@@ -22,8 +22,18 @@ class F_W_disposicioneslibre extends JFrame{
 class LibreSheel extends JPanel{
        public LibreSheel(){
         setLayout(null); // con esto, le digo que voy a hacer una disposicion libre
-        JButton boton1=new JButton("Click");
-        boton1.setBounds(50,80,70,35); // le agrego las coordenadas
-        add(boton1);
+        JLabel nombre= new JLabel("Inserte su nombre: ");
+        JLabel apellido= new JLabel("Inserte su apellido");
+        JTextField ins_nombre=new JTextField();
+        JTextField ins_apellido=new JTextField();
+        nombre.setBounds(20,35,200,20);
+        ins_nombre.setBounds(250,35,150,20);
+        apellido.setBounds(20, 65, 200, 20);
+        ins_apellido.setBounds(250, 65, 150, 20);
+
+        add(nombre);
+        add(apellido);
+        add(ins_nombre);
+        add(ins_apellido);
     }
 }
