@@ -19,7 +19,6 @@ class F_W_disposicionesmuelle extends JFrame{
        setVisible(true);
 
     }
-    
 }    
 class MuelleSheel extends JPanel{
     public MuelleSheel(){
@@ -31,13 +30,13 @@ class MuelleSheel extends JPanel{
         add(boton1);
         add(boton2);
         add(boton3);
-        Spring muelle=Spring.constant(0,10, 100);
-        milayout.putConstraint(SpringLayout.WEST, boton1, muelle, SpringLayout.WEST, this);
-        milayout.putConstraint(SpringLayout.WEST, boton2, muelle, SpringLayout.EAST, boton1);
-        milayout.putConstraint(SpringLayout.WEST, boton3, muelle, SpringLayout.EAST, boton2);
-        milayout.putConstraint(SpringLayout.EAST, this, muelle, SpringLayout.EAST, boton3);
+        Spring muelle=Spring.constant(0,10, 100); //este parametro CONSTRUYE un muelle FLEXIBLE
+        Spring muelle_rigido=Spring.constant(10); //este parametro CONSTRUYE un muelle RIGIDO.
+
+        milayout.putConstraint(SpringLayout.WEST, boton1, muelle, SpringLayout.WEST, this);   //muelle flaxible entre el boton1 y la lamina
+        milayout.putConstraint(SpringLayout.WEST, boton2, muelle_rigido, SpringLayout.EAST, boton1); // muelle RIGIDO entre el boton 2 y el boton 1
+        milayout.putConstraint(SpringLayout.WEST, boton3, muelle_rigido, SpringLayout.EAST, boton2); // muelle RIGIDO entre el boton 3 y boton 2
+        milayout.putConstraint(SpringLayout.EAST, this, muelle, SpringLayout.EAST, boton3);   // muelle flexible entre la lamina y el boton 3
 
     }
-
-
 }
