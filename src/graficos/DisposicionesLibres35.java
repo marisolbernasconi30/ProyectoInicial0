@@ -1,5 +1,6 @@
 package graficos;
 import javax.swing.*;
+import java.awt.*;
 public class DisposicionesLibres35 {
    
     public static void main (String [] args){
@@ -26,14 +27,27 @@ class LibreSheel extends JPanel{
         JLabel apellido= new JLabel("Inserte su apellido");
         JTextField ins_nombre=new JTextField();
         JTextField ins_apellido=new JTextField();
-        nombre.setBounds(20,35,200,20);
+        /*nombre.setBounds(20,35,200,20);
         ins_nombre.setBounds(250,35,150,20);
         apellido.setBounds(20, 65, 200, 20);
-        ins_apellido.setBounds(250, 65, 150, 20);
+        ins_apellido.setBounds(250, 65, 150, 20);*/
 
         add(nombre);
         add(apellido);
         add(ins_nombre);
         add(ins_apellido);
     }
+}
+
+class EnColumnas implements LayoutManager{
+    public void addLayoutComponent(String name,Component comp){}
+    public void layoutContainer(Container micontenedor){
+
+    }
+    public Dimension minimumLayoutSize(Container parent){
+        return null;}
+    public Dimension preferredLayoutSize(Container parent){
+        return null;}
+    public void removeLayoutComponent(Component comp){}
+
 }
