@@ -28,8 +28,11 @@ class LibreSheel extends JPanel{
         setLayout(new EnColumnas()); // con esto, le digo que voy a hacer una disposicion libre
         JLabel nombre= new JLabel("Inserte nombre: ");
         JLabel apellido= new JLabel("Inserte apellido:");
+        JLabel edad= new JLabel("Inserte su edad:");
+
         JTextField ins_nombre=new JTextField();
         JTextField ins_apellido=new JTextField();
+        JTextField ins_edad=new JTextField();
 
         /*nombre.setBounds(20,35,200,20);
         ins_nombre.setBounds(250,35,150,20);
@@ -40,6 +43,8 @@ class LibreSheel extends JPanel{
         add(ins_nombre);
         add(apellido);
         add(ins_apellido);
+        add(edad);
+        add(ins_edad);
     }
 
        
@@ -51,6 +56,9 @@ class EnColumnas implements LayoutManager{
     
     public void layoutContainer(Container micontenedor){ // este metodo, me va a agregar los elementos y ubicarlos
         
+        int d=micontenedor.getWidth();
+        x=d/2;
+
         int contador=0;  //para saber cuantos elementos agregamos 
 
         int n=micontenedor.getComponentCount(); //almacena cuantos componentes tiene el contenedor
@@ -58,11 +66,11 @@ class EnColumnas implements LayoutManager{
         for(int i=0; i<n; i++){  //recorre CADA UNO DE los elementos
              contador++;
              Component c=micontenedor.getComponent(i);
-             c.setBounds(x, y, 100, 20);
+             c.setBounds(x-100, y, 100, 15);
              x+=120;
              
              if (contador%2==0){  
-                x=20;
+                x=d/2;
                 y+=22;
              }
 
@@ -77,5 +85,5 @@ class EnColumnas implements LayoutManager{
     public void removeLayoutComponent(Component comp){}  // me los exige LayoutManager
 
     private int y=10;
-    private int x=20;
+    private int x;
 }
