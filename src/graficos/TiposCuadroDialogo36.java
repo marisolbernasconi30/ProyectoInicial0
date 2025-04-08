@@ -12,7 +12,7 @@ public class TiposCuadroDialogo36 {
 class CuadroDialogoMarco extends JFrame{
        public CuadroDialogoMarco(){
         setTitle("Cuadro de Dialogo prueba");
-        setBounds(50,40,900,600);
+        setBounds(50,40,600,400);
         CuadroDialogoLamina lamin=new CuadroDialogoLamina();
         add(lamin);
         lamin.setVisible(true);
@@ -46,8 +46,10 @@ class CuadroDialogoLamina extends JPanel{
             if (e.getSource()== uno){
                 //System.out.println("Presionaste el boton uno");
                 JOptionPane.showMessageDialog(CuadroDialogoLamina.this, "Mensaje de prueba", "Advertencia", 0);
+                //tener en cuenta lo que indica el numero final (modifica el icono cuando se ejecuta) puedo probar desde el cero hasta el tres para cambiar el icono de la ventana que aparece
             } else if (e.getSource()== dos){
-                System.out.println("Presionaste el boton dos");
+                //System.out.println("Presionaste el boton dos");
+                JOptionPane.showInputDialog("Introduzca su nombre:");
             }else if (e.getSource()== tres){
                 System.out.println("Presionaste el boton tres");
             }else if (e.getSource()== cuatro){
