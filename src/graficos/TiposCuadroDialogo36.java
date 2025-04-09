@@ -51,9 +51,11 @@ class CuadroDialogoLamina extends JPanel{
                 //System.out.println("Presionaste el boton dos");
                 JOptionPane.showInputDialog("Introduzca su nombre:");
             }else if (e.getSource()== tres){
-                System.out.println("Presionaste el boton tres");
+               // System.out.println("Presionaste el boton tres");
+                JOptionPane.showConfirmDialog(CuadroDialogoLamina.this, "Elige una opcion", "¿Quieres confirmar?", 1);
             }else if (e.getSource()== cuatro){
-                System.out.println("Presionaste el boton cuatro");
+                //System.out.println("Presionaste el boton cuatro");
+                JOptionPane.showOptionDialog(CuadroDialogoLamina.this, "Elige la opcion que quieras", "Opcion", 1, 2, null,null,null);
             }
           }
         
