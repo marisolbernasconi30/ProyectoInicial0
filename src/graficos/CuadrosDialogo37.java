@@ -52,7 +52,6 @@ class PrimerLaminaReto extends JPanel{
         setLayout(new FlowLayout());
 
         JLabel tipo=new JLabel("Tipo:");
-        cuadrouno.add(tipo, FlowLayout.LEFT);
         cuadrouno.add(tipo);
         AgregaBotonCajaUno("Mensaje");
         AgregaBotonCajaUno("Confirmar");
@@ -60,7 +59,6 @@ class PrimerLaminaReto extends JPanel{
         AgregaBotonCajaUno("Entrada");
 //-------------------------------------------------------------
         JLabel tipo_mensaje=new JLabel("Tipo de Mensaje:");
-        cuadrodos.add(tipo, FlowLayout.CENTER);
         cuadrodos.add(tipo_mensaje);
        
         AgregaBotonCajaDos("ERROR_MESSAGE");
@@ -71,7 +69,6 @@ class PrimerLaminaReto extends JPanel{
 
         //-------------------------------------------------------------
         JLabel mensaje=new JLabel("Mensaje:");
-        cuadrotres.add(tipo, FlowLayout.RIGHT);
         cuadrotres.add(mensaje);
        
         AgregaBotonCajaTres("Cadena");
@@ -81,7 +78,7 @@ class PrimerLaminaReto extends JPanel{
         AgregaBotonCajaTres("Object[]");
         //-------------------------------------------------------------
         JLabel confirmar=new JLabel("Confirmar:");
-        cuadrocuatro.add(tipo, FlowLayout.LEFT);
+
         cuadrocuatro.add(confirmar);
        
         AgregaBotonCajaCuatro("DEFAULT_OPTION");
@@ -90,7 +87,7 @@ class PrimerLaminaReto extends JPanel{
         AgregaBotonCajaCuatro("OK_CANCEL_OPTION");
         //-------------------------------------------------------------
         JLabel opcion=new JLabel("Opcion:");
-        cuadrocinco.add(tipo, FlowLayout.CENTER);
+
         cuadrocinco.add(opcion);
        
         AgregaBotonCajaCinco("String[]");
@@ -98,7 +95,7 @@ class PrimerLaminaReto extends JPanel{
         AgregaBotonCajaCinco("Object[]");
         //-------------------------------------------------------------
         JLabel entrada=new JLabel("Entrada:");
-        cuadroseis.add(tipo, FlowLayout.RIGHT);
+        
         cuadroseis.add(entrada);
        
         AgregaBotonCajaSeis("Campo de texto");
@@ -109,8 +106,15 @@ class PrimerLaminaReto extends JPanel{
 
         SegundaLamina segundalamina=new SegundaLamina();
         segundalamina.setVisible(true);
-        add(segundalamina, BorderLayout.SOUTH);
+        
+
         add(cuadrouno);
+        add(cuadrodos);
+        add(cuadrotres);
+        add(cuadrocuatro);
+        add(cuadrocinco);
+        add(cuadroseis);
+        add(segundalamina, BorderLayout.SOUTH);
 
     }
 
@@ -153,6 +157,12 @@ class PrimerLaminaReto extends JPanel{
             boton_caja_seis.addActionListener(actionseiscuadro);
             grupo_seis.add(boton_caja_seis);
             cuadroseis.add(boton_caja_seis);
+            
+            
+            
+            
+            
+         //   setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         }
 
     public class AccionCuadroUno implements ActionListener{
@@ -172,77 +182,77 @@ class PrimerLaminaReto extends JPanel{
 
     }
     public class AccionCuadroDos implements ActionListener{
-
+     // ESTE METODO TIENE QUE ENCARGARSE DE CAMBIAR EL ICONO, Y PUEDE COMBINARSE CON LAS DEMAS CAJAS
         public void actionPerformed(ActionEvent e) {
             JRadioButton box2 = (JRadioButton) e.getSource(); // Obtener el botón que generó el evento
             if(box2.getText().equals("ERROR_MESSAGE")){
-                JOptionPane.showMessageDialog(PrimerLaminaReto.this, "Tocaste el boton Mensaje", "Mensaje", 0);
+                JOptionPane.showMessageDialog(PrimerLaminaReto.this, "", "", 0);
             }else if(box2.getText().equals("INFORMATION_MESSAGE")){
-                JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "Tocaste el boton Confirmar", "Confirmar", 1);
+                JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "", "", 1);
             }else if(box2.getText().equals("WARNING_MESSAGE")){
-               JOptionPane.showOptionDialog(PrimerLaminaReto.this, "Tocaste el boton Opciones", "Opciones", 2, 1, null, null, null);
+               JOptionPane.showOptionDialog(PrimerLaminaReto.this, "", "", 2, 1, null, null, null);
             }else if(box2.getText().equals("QUESTION_MESSAGE")){
-               JOptionPane.showInputDialog(PrimerLaminaReto.this, "Tocaste el boton Entrada", "Entrada", 3);
+               JOptionPane.showInputDialog(PrimerLaminaReto.this, "", "", 3);
             }else if(box2.getText().equals("PLAIN_MESSAGE")){
-                JOptionPane.showInputDialog(PrimerLaminaReto.this, "Tocaste el boton Entrada", "Entrada", 3);
+                JOptionPane.showInputDialog(PrimerLaminaReto.this, "", "", 4);
              }
         }
 
     }
     public class AccionCuadroTres implements ActionListener{
-
+     // 
         public void actionPerformed(ActionEvent e) {
             JRadioButton box3 = (JRadioButton) e.getSource(); // Obtener el botón que generó el evento
-            if(box3.getText().equals("Cadena")){
+            if(box3.getText().equals("Cadena")){  //ME MUESTRA UN STRING
                 JOptionPane.showMessageDialog(PrimerLaminaReto.this, "Tocaste el boton Mensaje", "Mensaje", 0);
-            }else if(box3.getText().equals("Icono")){
+            }else if(box3.getText().equals("Icono")){ //ME TIENE QUE MOSTRAR UN ICONO 
                 JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "Tocaste el boton Confirmar", "Confirmar", 1);
-            }else if(box3.getText().equals("Componente")){
+            }else if(box3.getText().equals("Componente")){  //LAMINA COLOREADA EN AMARILLO
                JOptionPane.showOptionDialog(PrimerLaminaReto.this, "Tocaste el boton Opciones", "Opciones", 2, 1, null, null, null);
-            }else if(box3.getText().equals("Otros")){
+            }else if(box3.getText().equals("Otros")){ //ME TIENE QUE MOSTRAR UN DATE (FECHA)
                JOptionPane.showInputDialog(PrimerLaminaReto.this, "Tocaste el boton Entrada", "Entrada", 3);
-            }else if(box3.getText().equals("Object[]")){
+            }else if(box3.getText().equals("Object[]")){ //UN ARRAY DE ONJETOS/VARIOS OBJETOS (QUE ME MUESTRE LOS 4 ANTERIORES JUNTOS)
                 JOptionPane.showInputDialog(PrimerLaminaReto.this, "Tocaste el boton Entrada", "Entrada", 3);
              }
         }
     }
-    public class AccionCuadroCuatro implements ActionListener{
+    public class AccionCuadroCuatro implements ActionListener{ //HACE REFERENCIA AL CONFIRMAR DE LA CAJA 1
 
         public void actionPerformed(ActionEvent e) {
             JRadioButton box4 = (JRadioButton) e.getSource(); // Obtener el botón que generó el evento
-            if(box4.getText().equals("DEFAULT_OPTION")){
+            if(box4.getText().equals("DEFAULT_OPTION")){ //ME MUESTRA EL BOTON ACEPTAR
                 JOptionPane.showMessageDialog(PrimerLaminaReto.this, "Tocaste el boton Mensaje", "Mensaje", 0);
-            }else if(box4.getText().equals("YES_NO_OPTION")){
+            }else if(box4.getText().equals("YES_NO_OPTION")){ //ME MUESTRA EL BOTON SI Y NO 
                 JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "Tocaste el boton Confirmar", "Confirmar", 1);
-            }else if(box4.getText().equals("YES_NO_CANCEL_OPTION")){
+            }else if(box4.getText().equals("YES_NO_CANCEL_OPTION")){// ME MUESTRA EL BOTON SI, NO, CANCELAR
                JOptionPane.showOptionDialog(PrimerLaminaReto.this, "Tocaste el boton Opciones", "Opciones", 2, 1, null, null, null);
-            }else if(box4.getText().equals("OK_CANCEL_OPTION")){
+            }else if(box4.getText().equals("OK_CANCEL_OPTION")){ //ME MUESTRA EL BOTON ACEPTAR, CANCELAR
                JOptionPane.showInputDialog(PrimerLaminaReto.this, "Tocaste el boton Entrada", "Entrada", 3);
             }
         }
 
     }
-    public class AccionCuadroCinco implements ActionListener{
+    public class AccionCuadroCinco implements ActionListener{  //HACE REFERENCIA AL OPCION DE LA CAJA 1
 
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) { //
             JRadioButton box5 = (JRadioButton) e.getSource(); // Obtener el botón que generó el evento
-            if(box5.getText().equals("String[]")){
+            if(box5.getText().equals("String[]")){ //ARRAY DE STRINGS , ME APARECEN TRES BOTONES QUE DICEN AMARILLO, AZUL, ROJO (APARECEN COMO LOS BOTONES DE ACEPTAR Y CANCELAR)
                 JOptionPane.showMessageDialog(PrimerLaminaReto.this, "Tocaste el boton Mensaje", "Mensaje", 0);
-            }else if(box5.getText().equals("Icon[]")){
+            }else if(box5.getText().equals("Icon[]")){ //ARRAY DE ICONOS, ME APARECEN TRES BOTONES DE ICONOS
                 JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "Tocaste el boton Confirmar", "Confirmar", 1);
-            }else if(box5.getText().equals("Object[]")){
+            }else if(box5.getText().equals("Object[]")){ // ARRAY DE OBJETOS, ME TIENE QUE APARECER UN ICONO, UN STRING, LAMINA COLOREADA, FECHA.
                JOptionPane.showOptionDialog(PrimerLaminaReto.this, "Tocaste el boton Opciones", "Opciones", 2, 1, null, null, null);
             }
         }
 
     }
-    public class AccionCuadroSeis implements ActionListener{
+    public class AccionCuadroSeis implements ActionListener{ //HACE REFERENCIA A LA OPCION ENTRADA DE LA CAJA 1
 
         public void actionPerformed(ActionEvent e) {
             JRadioButton box6 = (JRadioButton) e.getSource(); // Obtener el botón que generó el evento
-            if(box6.getText().equals("Campo de texto")){
+            if(box6.getText().equals("Campo de texto")){  //COMO EL DE ENTRADA 
                 JOptionPane.showMessageDialog(PrimerLaminaReto.this, "Tocaste el boton Mensaje", "Mensaje", 0);
-            }else if(box6.getText().equals("Combo")){
+            }else if(box6.getText().equals("Combo")){ //INTRODUZCO INFORMACION A TRAVES DE UN DESPLEGABLE 
                 JOptionPane.showConfirmDialog(PrimerLaminaReto.this, "Tocaste el boton Confirmar", "Confirmar", 1);
             }
 
