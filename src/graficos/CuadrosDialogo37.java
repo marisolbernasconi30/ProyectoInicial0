@@ -49,60 +49,79 @@ class PrimerLaminaReto extends JPanel{
 
     public PrimerLaminaReto(){
        
-        setLayout(new FlowLayout());
+       
+        JPanel distribucion= new JPanel();
+        distribucion.setLayout(new GridLayout(2,3));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        distribucion.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Tipo"));
+      
 
-        JLabel tipo=new JLabel("Tipo:");
-        cuadrouno.add(tipo);
         AgregaBotonCajaUno("Mensaje");
         AgregaBotonCajaUno("Confirmar");
         AgregaBotonCajaUno("Opcion");
         AgregaBotonCajaUno("Entrada");
+        distribucion.add(cuadrouno);
+
 //-------------------------------------------------------------
-        JLabel tipo_mensaje=new JLabel("Tipo de Mensaje:");
-        cuadrodos.add(tipo_mensaje);
-       
+        JPanel distribuciondos= new JPanel();
+       // distribuciondos.setLayout(new GridLayout(2,3));
+        distribuciondos.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        distribuciondos.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Tipo de mensaje"));
+        
         AgregaBotonCajaDos("ERROR_MESSAGE");
         AgregaBotonCajaDos("INFORMATION_MESSAGE");
         AgregaBotonCajaDos("WARNING_MESSAGE");
         AgregaBotonCajaDos("QUESTION_MESSAGE");
         AgregaBotonCajaDos("PLAIN_MESSAGE");
+        distribuciondos.add(cuadrodos);
+        
 
         //-------------------------------------------------------------
-        JLabel mensaje=new JLabel("Mensaje:");
-        cuadrotres.add(mensaje);
-       
+        JPanel distribuciontres= new JPanel();
+        // distribuciondos.setLayout(new GridLayout(2,3));
+         distribuciontres.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+         distribuciontres.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Mensaje"));
+        
+    
         AgregaBotonCajaTres("Cadena");
         AgregaBotonCajaTres("Icono");
         AgregaBotonCajaTres("Componente");
         AgregaBotonCajaTres("Otros");
         AgregaBotonCajaTres("Object[]");
+        distribuciontres.add(cuadrotres);
         //-------------------------------------------------------------
-        JLabel confirmar=new JLabel("Confirmar:");
-
-        cuadrocuatro.add(confirmar);
-       
+        JPanel distribucioncuatro= new JPanel();
+       // distribuciondos.setLayout(new GridLayout(2,3));
+        distribucioncuatro.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        distribucioncuatro.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Confirmar"));
+        
+        
         AgregaBotonCajaCuatro("DEFAULT_OPTION");
         AgregaBotonCajaCuatro("YES_NO_OPTION");
         AgregaBotonCajaCuatro("YES_NO_CANCEL_OPTION");
         AgregaBotonCajaCuatro("OK_CANCEL_OPTION");
+        distribucioncuatro.add(cuadrocuatro);
         //-------------------------------------------------------------
-        JLabel opcion=new JLabel("Opcion:");
-
-        cuadrocinco.add(opcion);
+        JPanel distribucioncinco= new JPanel();
+       // distribuciondos.setLayout(new GridLayout(2,3));
+        distribucioncinco.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        distribucioncinco.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Opcion"));
+        
        
         AgregaBotonCajaCinco("String[]");
         AgregaBotonCajaCinco("Icon[]");
         AgregaBotonCajaCinco("Object[]");
+        distribucioncinco.add(cuadrocinco);
         //-------------------------------------------------------------
-        JLabel entrada=new JLabel("Entrada:");
-        
-        cuadroseis.add(entrada);
-       
+        JPanel distribucionseis= new JPanel();
+        // distribuciondos.setLayout(new GridLayout(2,3));
+         distribucionseis.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+         distribucionseis.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Entrada"));
+         
+
         AgregaBotonCajaSeis("Campo de texto");
         AgregaBotonCajaSeis("Combo");
-
-        
-       // cuadrouno.add(Box.createVerticalStrut(60))
+        distribucionseis.add(cuadroseis);
 
         SegundaLamina segundalamina=new SegundaLamina();
         segundalamina.setVisible(true);
@@ -157,12 +176,6 @@ class PrimerLaminaReto extends JPanel{
             boton_caja_seis.addActionListener(actionseiscuadro);
             grupo_seis.add(boton_caja_seis);
             cuadroseis.add(boton_caja_seis);
-            
-            
-            
-            
-            
-         //   setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
         }
 
     public class AccionCuadroUno implements ActionListener{
@@ -264,10 +277,8 @@ class SegundaLamina extends JPanel{
         setLayout(new BorderLayout());
         JButton mostrarbutton=new JButton("Mostrar");
     
-        // mostrarbutton.addActionListener(null); PARA AGREGAR A FUTURO
-    
        add(mostrarbutton);
- //implements actionListener
+ 
     } 
   }
 }
