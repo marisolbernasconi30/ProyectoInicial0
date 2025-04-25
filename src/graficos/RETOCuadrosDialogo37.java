@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-public class CuadrosDialogo37 {
+public class RETOCuadrosDialogo37 {
     public static void main(String[] args) {
        MarcoReto marco=new MarcoReto();
        marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
